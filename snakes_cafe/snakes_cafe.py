@@ -15,7 +15,7 @@ def order():
 
 # menu items - dictionary
 menu_list = {
-    "wings": 0,
+    "Wings": 0,
     "Cookies": 0,
     "Spring Rolls": 0,
     "Salmon": 0,
@@ -81,12 +81,12 @@ while user_input != "Quit":
     if user_input in menu_list:
         if user_input not in added_items:
             added_items[user_input] = 0
-            added_items[user_input] += 1
-            print(
-                f"** {added_items[user_input]} order of {user_input} have been added to your meal **"
-            )
-            user_input = input("> ").lower()
-            user_input = user_input.capitalize()
+        added_items[user_input] += 1
+        print(
+            f"** {added_items[user_input]} order of {user_input} have been added to your meal **"
+        )
+    user_input = input("> ").lower()
+    user_input = user_input.capitalize()
 
 if user_input == "Quit":
     if added_items == {}:
@@ -95,4 +95,4 @@ if user_input == "Quit":
         print(f"** Your order: **")
         for x in added_items.keys():
             print(f"{x} {added_items[x]}")
-            print("** Your order is coming right up! **")
+        print("** Your order is coming right up! **")
